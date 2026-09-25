@@ -1,0 +1,66 @@
+name: EntityLogProtect
+version: '${version}'
+
+main: org.domaja.EntityLogProtect
+api-version: '26.2'
+load: POSTWORLD
+
+commands:
+  el:
+    description: Просмотр логов инвентарей сущностей
+    usage: |
+      /el near [radius:] [time:] [include:] [exclude:] [user:] [target:] [page:]
+      /el lookup [user:] [target:] [time:] [include:] [exclude:] [page:]
+      /el i
+    permission: entitylogprotect.use
+
+permissions:
+  entitylogprotect.*:
+    description: Все права плагина Entity Log Protect
+    default: op
+    children:
+      entitylogprotect.use: true
+      entitylogprotect.near: true
+      entitylogprotect.lookup: true
+      entitylogprotect.i: true
+      entitylogprotect.tpcoords: true
+      entitylogprotect.entity: true
+      entitylogprotect.block: true
+      entitylogprotect.cache: true
+      entitylogprotect.info: true
+
+  entitylogprotect.use:
+    description: Доступ к командам /el
+    default: op
+
+  entitylogprotect.near:
+    description: Доступ к /el near
+    default: op
+
+  entitylogprotect.lookup:
+    description: Доступ к /el lookup
+    default: op
+
+  entitylogprotect.i:
+    description: Доступ к /el i
+    default: op
+
+  entitylogprotect.tpcoords:
+    description: Позволяет телепортироваться по клику из лога (в режиме спектатора)
+    default: op
+
+  entitylogprotect.entity:
+    description: Позволяет показать список с страницами конкретного Entity с UUID.
+    default: op
+
+  entitylogprotect.block:
+    description: Позволяет использовать /el block
+    default: op
+
+  entitylogprotect.cache:
+    description: Позволяет использовать /el cache
+    default: op
+
+  entitylogprotect.info:
+    description: Позволяет использовать /el info
+    default: op
